@@ -54,7 +54,7 @@ export default function Setup() {
   return (
     <PageTransition className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 flex items-center justify-center p-4">
+      <main className="flex-1 flex items-center justify-center p-3 sm:p-4">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -65,13 +65,13 @@ export default function Setup() {
             {/* Ambient header glow */}
             <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent pointer-events-none" />
             
-            <div className="p-8 sm:p-10 relative z-10">
+            <div className="p-5 sm:p-8 md:p-10 relative z-10">
               <div className="flex items-center gap-4 mb-2">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 text-primary box-glow">
                   <Settings2 className="h-6 w-6" />
                 </div>
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Configure Session</h1>
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">Configure Session</h1>
                   <p className="text-sm text-gray-400">Tailor the AI to your exact interview specifications.</p>
                 </div>
               </div>

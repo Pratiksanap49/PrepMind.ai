@@ -31,22 +31,22 @@ export default function Feedback() {
   return (
     <PageTransition className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-12">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-12">
         
         {/* Score Header */}
-        <div className="mb-16 text-center">
-          <div className="inline-flex flex-col items-center justify-center p-12 glass-card rounded-full border-2 border-primary/20 aspect-square relative box-glow">
+        <div className="mb-8 sm:mb-16 text-center">
+          <div className="inline-flex flex-col items-center justify-center p-8 sm:p-12 glass-card rounded-full border-2 border-primary/20 aspect-square relative box-glow">
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl animate-pulse" />
             <h2 className="text-gray-400 font-medium mb-2 relative z-10">Overall Score</h2>
-            <div className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 relative z-10 tracking-tighter">
+            <div className="text-5xl sm:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 relative z-10 tracking-tighter">
               {overallScore}
             </div>
             <span className="text-gray-500 font-medium mt-2 relative z-10">out of 10</span>
           </div>
           
-          <h1 className="text-3xl font-bold text-white mt-8 mb-6 tracking-tight">Interview Evaluation Complete</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mt-6 sm:mt-8 mb-4 sm:mb-6 tracking-tight">Interview Evaluation Complete</h1>
           
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <Button
               className="bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(139,92,246,0.5)]"
               onClick={handleNewInterview}
@@ -65,7 +65,7 @@ export default function Feedback() {
 
         {/* Detailed Feedback */}
         <div>
-          <h3 className="text-xl font-semibold text-white mb-6 border-b border-white/10 pb-4">Detailed Analysis</h3>
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-4 sm:mb-6 border-b border-white/10 pb-4">Detailed Analysis</h3>
           <StaggerContainer className="space-y-6">
             {feedback.map((item, index) => {
               const isSkipped = !answers[index] || answers[index].trim() === "";
@@ -77,7 +77,7 @@ export default function Feedback() {
                     {/* Score indicator bar left side */}
                     <div className={`absolute left-0 top-0 bottom-0 w-1 ${isSkipped ? 'bg-red-500' : (item.score >= 8 ? 'bg-emerald-500' : item.score >= 5 ? 'bg-yellow-500' : 'bg-red-500')}`} />
                     
-                    <div className="p-6 sm:p-8 pl-8 sm:pl-10">
+                    <div className="p-4 sm:p-6 md:p-8 pl-6 sm:pl-8 md:pl-10">
                       
                       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
                         <div className="flex-1">
@@ -91,7 +91,7 @@ export default function Feedback() {
                         </Badge>
                       </div>
 
-                      <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-white/5">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-white/5">
                         
                         {/* User Answer */}
                         <div className="space-y-3">

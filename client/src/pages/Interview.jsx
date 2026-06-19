@@ -92,7 +92,7 @@ export default function Interview() {
         />
       </div>
 
-      <PageTransition className="flex-1 flex flex-col items-center justify-center px-4 py-12 relative z-10 w-full max-w-4xl mx-auto">
+      <PageTransition className="flex-1 flex flex-col items-center justify-center px-3 sm:px-4 py-6 sm:py-12 relative z-10 w-full max-w-4xl mx-auto">
         
         {/* Loading Overlay */}
         <AnimatePresence>
@@ -130,7 +130,7 @@ export default function Interview() {
               transition={{ duration: 0.3 }}
               className="mb-8"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white leading-relaxed tracking-tight">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-semibold text-white leading-relaxed tracking-tight">
                 {questions[currentIndex]?.questionText}
               </h2>
             </motion.div>
@@ -140,7 +140,7 @@ export default function Interview() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="relative flex-1 min-h-[300px]"
+            className="relative flex-1 min-h-[200px] sm:min-h-[300px]"
           >
             {/* Soft inner glow behind textarea */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-cyan-500/20 rounded-3xl blur-md opacity-50" />
@@ -149,7 +149,7 @@ export default function Interview() {
               placeholder="Type your detailed answer here..."
               value={currentAnswer}
               onChange={(e) => setCurrentAnswer(e.target.value)}
-              className="w-full h-full min-h-[300px] p-8 bg-[#050508]/80 backdrop-blur-xl border border-white/10 rounded-3xl text-lg text-gray-200 placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 relative z-10 resize-none transition-all leading-relaxed"
+              className="w-full h-full min-h-[200px] sm:min-h-[300px] p-4 sm:p-8 bg-[#050508]/80 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl text-base sm:text-lg text-gray-200 placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/50 relative z-10 resize-none transition-all leading-relaxed"
             />
           </motion.div>
 
@@ -157,21 +157,21 @@ export default function Interview() {
 
           {/* Action Bar */}
           <motion.div 
-            className="flex items-center justify-between pt-4"
+            className="flex items-center justify-between pt-4 gap-2"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
           >
             <Button
               variant="ghost"
               onClick={handleSkip}
               disabled={loading}
-              className="text-gray-400 hover:text-white hover:bg-white/5 px-6 rounded-xl"
+              className="text-gray-400 hover:text-white hover:bg-white/5 px-3 sm:px-6 rounded-xl text-sm sm:text-base"
             >
               <SkipForward className="w-4 h-4 mr-2" /> Skip
             </Button>
 
             {isLastQuestion ? (
               <Button
-                className="h-14 px-8 text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(139,92,246,0.5)] transition-all hover:shadow-[0_0_25px_-5px_rgba(139,92,246,0.7)] hover:scale-[1.02]"
+                className="h-11 sm:h-14 px-4 sm:px-8 text-sm sm:text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(139,92,246,0.5)] transition-all hover:shadow-[0_0_25px_-5px_rgba(139,92,246,0.7)] hover:scale-[1.02]"
                 onClick={() => handleSubmit()}
                 disabled={loading}
               >
@@ -179,7 +179,7 @@ export default function Interview() {
               </Button>
             ) : (
               <Button
-                className="h-14 px-8 text-lg font-medium bg-white text-black hover:bg-gray-200 rounded-xl shadow-lg transition-all hover:scale-[1.02]"
+                className="h-11 sm:h-14 px-4 sm:px-8 text-sm sm:text-lg font-medium bg-white text-black hover:bg-gray-200 rounded-xl shadow-lg transition-all hover:scale-[1.02]"
                 onClick={handleNext}
                 disabled={loading}
               >

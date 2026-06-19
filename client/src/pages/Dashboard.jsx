@@ -33,10 +33,10 @@ export default function Dashboard() {
   return (
     <PageTransition className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 mx-auto w-full max-w-6xl px-4 py-12 lg:py-20">
+      <main className="flex-1 mx-auto w-full max-w-6xl px-3 sm:px-4 py-6 sm:py-12 lg:py-20">
         
         {/* Hero Section */}
-        <div className="relative mb-16 p-8 sm:p-12 glass-card rounded-3xl overflow-hidden border border-white/10">
+        <div className="relative mb-8 sm:mb-16 p-5 sm:p-8 md:p-12 glass-card rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10">
           <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl">
@@ -49,21 +49,21 @@ export default function Dashboard() {
 
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight"
+              className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight"
             >
               Welcome back, <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-400">{user?.name || "User"}</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="text-lg text-gray-400 mb-8"
+              className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8"
             >
               Your next breakthrough is just one practice session away. Customize an interview tailored exactly to your dream role.
             </motion.p>
             
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
               <Button
-                className="h-14 px-8 text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(139,92,246,0.5)] transition-all hover:shadow-[0_0_25px_-5px_rgba(139,92,246,0.7)] hover:scale-[1.02]"
+                className="h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-medium bg-primary hover:bg-primary/90 text-white rounded-xl shadow-[0_0_20px_-5px_rgba(139,92,246,0.5)] transition-all hover:shadow-[0_0_25px_-5px_rgba(139,92,246,0.7)] hover:scale-[1.02]"
                 onClick={() => navigate("/setup")}
               >
                 <Play className="mr-2 h-5 w-5 fill-current" /> Initialize Session
@@ -75,7 +75,7 @@ export default function Dashboard() {
         {/* Recent Sessions */}
         <div>
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
               <Clock className="w-6 h-6 text-primary" />
               Recent Activity
             </h2>

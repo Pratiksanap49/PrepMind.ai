@@ -30,11 +30,11 @@ function SessionCard({ session }) {
     <div className="glass-card rounded-2xl border border-white/10 hover:border-primary/40 hover:bg-white/[0.03] transition-colors overflow-hidden">
       {/* HEADER */}
       <div 
-        className="p-6 sm:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer"
+        className="p-4 sm:p-6 sm:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 cursor-pointer"
         onClick={handleToggle}
       >
         <div>
-          <h3 className="text-xl font-semibold text-white mb-1 tracking-tight flex items-center gap-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-white mb-1 tracking-tight flex items-center gap-2">
             {session.role}
           </h3>
           <p className="text-sm text-gray-500">
@@ -63,7 +63,7 @@ function SessionCard({ session }) {
 
       {/* EXPANDABLE DETAILS */}
       {expanded && (
-        <div className="border-t border-white/10 p-6 sm:px-8 bg-white/[0.02]">
+        <div className="border-t border-white/10 p-4 sm:p-6 sm:px-8 bg-white/[0.02]">
           {loading && (
             <div className="flex justify-center py-8">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
@@ -149,14 +149,14 @@ export default function History() {
   return (
     <PageTransition className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 py-12">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-3 sm:px-4 py-6 sm:py-12">
         
-        <div className="flex items-center gap-3 mb-10 border-b border-white/10 pb-6">
+        <div className="flex items-center gap-3 mb-6 sm:mb-10 border-b border-white/10 pb-4 sm:pb-6">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 text-primary box-glow">
             <HistoryIcon className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-white tracking-tight">Session History</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">Session History</h1>
             <p className="text-gray-400 mt-1">Review your past performance and track your growth.</p>
           </div>
         </div>

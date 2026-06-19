@@ -72,8 +72,8 @@ export default function Login() {
       </div>
       
       {/* Right pane - Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12">
-        <div className="w-full max-w-md space-y-8 glass-card p-10 rounded-3xl relative z-10">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-4 sm:p-8 lg:p-12">
+        <div className="w-full max-w-md space-y-6 sm:space-y-8 glass-card p-6 sm:p-10 rounded-2xl sm:rounded-3xl relative z-10">
           
           <div className="lg:hidden flex items-center justify-center gap-2 mb-8">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary box-glow">
@@ -85,7 +85,7 @@ export default function Login() {
           </div>
 
           <div className="text-center lg:text-left">
-            <h2 className="text-3xl font-bold text-white mb-2">Welcome back</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Welcome back</h2>
             <p className="text-gray-400">Enter your credentials to access your dashboard.</p>
           </div>
 
