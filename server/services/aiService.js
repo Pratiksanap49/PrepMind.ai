@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const groq = new Groq();
+const GROQ_MODEL = "openai/gpt-oss-20b";
 
 /**
  * Generate interview questions using Groq AI.
@@ -23,7 +24,7 @@ Respond ONLY with a valid JSON array of strings. No explanation, no markdown, no
 Example: ["Question 1?", "Question 2?"]`;
 
     const completion = await groq.chat.completions.create({
-        model: "groq/compound-mini",
+        model: GROQ_MODEL,
         messages: [{ role: "user", content: prompt }],
     });
 
@@ -70,7 +71,7 @@ Respond ONLY with valid JSON in this exact format (no explanation, no markdown, 
 }`;
 
     const completion = await groq.chat.completions.create({
-        model: "groq/compound-mini",
+        model: GROQ_MODEL,
         messages: [{ role: "user", content: prompt }],
     });
 
